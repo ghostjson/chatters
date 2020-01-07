@@ -14,12 +14,12 @@ export class HomePage implements OnInit{
   // @ViewChild('chatcontent', {static: false}) content : any;
 
   ngOnInit(): void {
-    this.content.scrollToBottom();
+    // this.content.scrollToBottom();
   }
 
-  // ionViewDidEnter() {
-  //   this.content.scrollToBottom();
-  // }
+  ionViewDidEnter() {
+    this.content.scrollToBottom();
+  }
 
   message_box: string = '';
 
