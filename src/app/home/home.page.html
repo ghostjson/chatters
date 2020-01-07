@@ -10,8 +10,8 @@
 
   <ion-grid fixed>
 
-    <span *ngFor="let msg of messageList">
-      <ion-row class="msg {{isMe(msg) ? 'me' : 'others'}}">
+    <span *ngFor="let msg of chatlist.messages">
+      <ion-row class="msg {{chatlist.isMe(msg)? 'me' : 'other'}}">
         <ion-col>
           <h5 class="msg-head">{{msg.sender}}</h5>
           <div class="msg-item">
