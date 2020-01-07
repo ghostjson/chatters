@@ -8,16 +8,22 @@ import { ChatlistService } from './chatlist.service';
 })
 export class ChatComponent implements OnInit {
 
-  username : String = 'Jack';
+  
+  username : string = 'Jack';
 
-  message_box : String = '';
+  message_box : string = '';
 
 
   constructor(private chatlist : ChatlistService) {}
 
-  ngOnInit(){}
+  ngOnInit(){
+  }
+
+
 
   sendMessage(){
   }
+
+
 
 }

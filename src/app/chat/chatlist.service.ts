@@ -21,6 +21,21 @@ export class ChatlistService {
       new Message(
         'Jack', '12:01', 'How are you?'
       ),
+      new Message(
+        'Jack', '12:01', 'How are you?'
+      ),
+      new Message(
+        'Jack', '12:01', 'How are you?'
+      ),
+      new Message(
+        'Sparrow', '12:01', 'How are you?'
+      ),
+      new Message(
+        'Jack', '12:01', 'How are you?'
+      ),
+      new Message(
+        'Jack', '12:01', 'How are you?'
+      ),
 
     ];
 
@@ -36,8 +51,8 @@ export class ChatlistService {
     )
   }
 
-  isMe(msg : Message){
-    return msg.sender === this.username;
+  isMe(msg : Message) : boolean {
+    return msg.sender == this.username;
   }
 
 

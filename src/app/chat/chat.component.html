@@ -1,5 +1,5 @@
-<span *ngFor="let msg of chatlist.messages">
-  <ion-row class="msg {{chatlist.isMe(msg)? 'me' : 'other'}}">
+<span *ngFor="let msg of chatlist.messages" >
+  <ion-row class="msg {{chatlist.isMe(msg)? 'me' : 'other'}}" >
     <ion-col>
       <h5 class="msg-head">{{msg.sender}}</h5>
       <div class="msg-item">
