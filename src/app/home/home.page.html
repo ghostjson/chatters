@@ -1,14 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Messenger
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+  <ion-grid fixed>
+
+    <span *ngFor="let msg of messageList">
+      <ion-row class="msg {{isMe(msg) ? 'me' : 'others'}}">
+        <ion-col>
+          <h5 class="msg-head">{{msg.sender}}</h5>
+          <div class="msg-item">
+            <div class="msg-msg">{{msg.message}}</div>
+            <div class="msg-time">{{msg.time}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </span>
+
+  </ion-grid>
+
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Type message here ..." [(ngModel)]="message_box"></ion-input>
+    <ion-icon id="send-button" slot="end" name="send" padding size="32" (click)="sendMessage()"></ion-icon>
+  </ion-toolbar>
+</ion-footer>
