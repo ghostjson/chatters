@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { ChatComponent } from '../chat/chat.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ChatComponent]
 })
 export class HomePageModule {
 

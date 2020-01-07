@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ChatlistService } from '../chat/chatlist.service';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +7,7 @@ import { ChatlistService } from '../chat/chatlist.service';
 })
 export class HomePage {
 
-  username : String = 'Jack';
-
-  message_box : String = '';
-
-
-  constructor(private chatlist : ChatlistService) {}
-
-  sendMessage(){
-  }
-
+  
 
 }
 
