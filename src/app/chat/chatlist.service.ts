@@ -10,7 +10,6 @@ export class ChatlistService {
 
   public messages: Message[] = [];
   public username: string;
-  private observable: Observable<Message>;
 
 
   constructor(private socket: Socket) {
@@ -29,7 +28,7 @@ export class ChatlistService {
   }
 
   getMessage(): Observable<Message> {
-    return this.observable = new Observable((observer) => 
+    return new Observable((observer) => 
       this.socket.on('chat message', (data) => observer.next(data))
     );
   }
