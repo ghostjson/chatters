@@ -26,13 +26,7 @@ export class HomePage implements OnInit{
   constructor(private chatlist: ChatlistService) { }
 
 
-  // scrollToBottom(){
-  //   setTimeout(() => {
-  //     if (this.content.scrollToBottom) {
-  //         this.content.scrollToBottom(400);
-  //     }
-  // }, 500);
-  // }
+
 
   sendMessage() {
     setTimeout(()=>{this.content.scrollToBottom(200);},100);

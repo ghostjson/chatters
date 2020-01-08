@@ -1,54 +1,37 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { Message } from './chat.model';
+import { Socket } from 'ngx-socket-io';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatlistService {
 
-  public messages: Message[];
+  public messages: Message[] = [];
   public username: string;
+  private observable: Observable<Message>;
 
 
-  constructor() {
-    this.messages = [
-      new Message(
-        'Jack', '12:00', 'Hello world'
-      ),
-      new Message(
-        'Sparrow', '12:01', 'Hello'
-      ),
-      new Message(
-        'Jack', '12:01', 'How are you?'
-      ),
-      new Message(
-        'Jack', '12:01', 'How are you?'
-      ),
-      new Message(
-        'Jack', '12:01', 'How are you?'
-      ),
-      new Message(
-        'Sparrow', '12:01', 'How are you?'
-      ),
-      new Message(
-        'Jack', '12:01', 'How are you?'
-      ),
-      new Message(
-        'Jack', '12:01', 'How are you?'
-      ),
-
-    ];
+  constructor(private socket: Socket) {
+    this.getMessage().subscribe((data) => {
+      this.messages.push(data)
+    });
 
     this.username = 'Jack';
   }
 
 
-  send_message(sender: string, message: string) {
-    this.messages.push(
-      new Message(
-         sender , `${new Date().getHours()}:${new Date().getMinutes()}`, message
-      ),
-    )
+  send_message(sender: string, message: string) { 
+    this.socket.emit('chat message', new Message(
+      sender , `${new Date().getHours()}:${new Date().getMinutes()}`, message
+   ),);
+  }
+
+  getMessage(): Observable<Message> {
+    return this.observable = new Observable((observer) => 
+      this.socket.on('chat message', (data) => observer.next(data))
+    );
   }
 
   isMe(msg : Message) : boolean {
