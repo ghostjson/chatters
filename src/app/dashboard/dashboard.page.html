@@ -1,17 +1,26 @@
 <ion-header>
   <ion-title>Chatters</ion-title>
+  <ion-icon slot="end" name="search" class="search"></ion-icon>
 </ion-header>
 
 <ion-content>
 
   <ion-list>
 
-    <ion-item (click)="chatTo()" *ngFor="let person of contacts.contactList" class="chat-item">
-      <ion-avatar slot="start">
-        <img src="{{ person.profilePic }}" />
-      </ion-avatar>
-      <ion-label>{{ person.firstName + ' ' +person.lastName }}</ion-label>
-    </ion-item>
+    <span *ngFor="let person of contacts.contactList">
+      <ion-item (click)="chatTo(person.username)" class="chat-item">
+        <ion-avatar slot="start">
+          <img src="{{ person.profilePic }}" />
+        </ion-avatar>
+        <ion-label>{{ person.firstName + ' ' +person.lastName }}</ion-label>
+      </ion-item>
+    </span>
+
   </ion-list>
+
+
+  <div class="fab-add-people">
+    <ion-icon name="md-person-add"></ion-icon>
+  </div>
 
 </ion-content>

@@ -14,7 +14,12 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    this.router.navigate(['/dashboard'])
+    try{
+      this.router.navigate(['/dashboard'])
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
 }

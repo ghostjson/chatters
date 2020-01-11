@@ -1,13 +1,43 @@
-ion-header{
-    background-color: #6920B0;
-}
+ion-header {
+  background-color: #6920b0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
 
-ion-title {
+  ion-title {
     color: white;
-    margin-top: 30px;
     margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .search {
+    font-size: 1.4em;
+    color: white;
+    padding-right: 10px;
+    cursor: pointer;
+  }
 }
 
-.chat-item{
-    cursor: pointer;
+.chat-item {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 0.8em;
+}
+
+.fab-add-people{
+    background-color: #6920b0;
+    width: 38px;
+    padding: 7px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    ion-icon{
+        margin-top: 0.5px;
+        margin-left: 1px;
+        font-size: 1.3em;
+        color: white;
+    }
+    
 }
