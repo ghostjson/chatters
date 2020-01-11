@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
+  <ion-title>Chatters</ion-title>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <ion-item (click)="chatTo()" *ngFor="let person of contacts.contactList" class="chat-item">
+      <ion-avatar slot="start">
+        <img src="{{ person.profilePic }}" />
+      </ion-avatar>
+      <ion-label>{{ person.firstName + ' ' +person.lastName }}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContactService } from '../contacts/contact.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private contacts : ContactService) { }
 
   ngOnInit() {
+  }
+
+  chatTo() : void {
+
+    this.router.navigate(['/chat']);
+
   }
 
 }
